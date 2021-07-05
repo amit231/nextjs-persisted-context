@@ -37,7 +37,7 @@ instance.interceptors.response.use(
 )
 
 export function setAuthorizationToken(user: any) {
-  if (user) {
+  if (user.session_token) {
     instance.defaults.headers.common['session-token'] = `${user.session_token}`
   } else {
     delete instance.defaults.headers.common['session-token']
